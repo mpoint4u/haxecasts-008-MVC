@@ -6,7 +6,7 @@
 	<meta title="Episode-008-MVC" package="Episode008MVC" version="1.0.0" company="pm" />
 	
 	<!-- output -->
-	<app main="Main" file="Episode008MVC" path="bin" />
+	<app main="Main" file="Episode008MVC" path="Export" />
 	
 	<window background="#000000" fps="60" />
 	<window width="800" height="480" unless="mobile" />
@@ -17,11 +17,26 @@
 	<haxelib name="openfl" />
 	<haxelib name="actuate" />
 	
-	<!-- assets -->
 	<icon path="assets/openfl.svg" />
-	<assets path="assets/images" include="*" />
+	<!-- assets 
+<assets path="assets/images" include="*" type="image" />
+
+<assets path="assets/audio-files" include="*.mp3" rename="audio-files" />
+-->
 	
-	<!-- optimize output
-	<haxeflag name="-dce full" /> -->
+
+	<assets path="assets">
+		<assets path="images" include="*" type="image" />
+		
+		<sound path="audio-files/track-01.mp3" />		
+		<sound path="audio-files/track-02.mp3" />		
+		<sound path="audio-files/track-03.mp3" />		
+		<sound path="audio-files/track-04.mp3" />
+		
+	</assets>	
+	
+	
+<!--	<music path="sound/BackgroundMusic.mp3" />  -->
+
 	
 </project>

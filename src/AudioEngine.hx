@@ -26,7 +26,7 @@ class AudioEngine extends AView
 	private var bytes:ByteArray;
 	// house keeping
 	private var samplesInSong:Float;
-	private var channelsLoaded:UInt;
+	private var channelsLoaded:Int;
 	
 	private var playing:Bool;
 	private var loaded:Bool;
