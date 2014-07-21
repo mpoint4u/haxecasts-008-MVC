@@ -1,4 +1,5 @@
 // abstrace class defining interface for views
+package lib;
 
 import flash.display.Sprite;
 import flash.events.Event;
