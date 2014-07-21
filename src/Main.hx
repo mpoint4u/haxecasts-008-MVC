@@ -1,6 +1,7 @@
 import flash.display.Sprite;
 import flash.Lib;
 import lib.AView;
+import lib.IController;
 
 class Main extends Sprite
 {

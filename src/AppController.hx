@@ -1,3 +1,5 @@
+import lib.IController;
+
 class AppController implements IController
 {
   private var model:Model;

@@ -1,6 +1,10 @@
+import bitmaps.PlayButtonBitmap;
 import flash.display.Sprite;
 import flash.events.Event;
 import flash.Vector;
+import lib.AView;
+import lib.Button;
+import lib.IController;
 
 class AppView extends AView
 {

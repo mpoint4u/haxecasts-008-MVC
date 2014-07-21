@@ -1,5 +1,10 @@
 import flash.display.Sprite;
 import flash.events.Event;
+import lib.AView;
+import lib.Dial;
+import lib.IController;
+import lib.Slider;
+import lib.UIEvent;
 
 class ChannelView extends AView
 {

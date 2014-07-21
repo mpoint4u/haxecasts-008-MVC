@@ -7,6 +7,8 @@ import flash.errors.IOError;
 import flash.events.IOErrorEvent;
 import flash.events.ProgressEvent;
 import flash.Vector;
+import lib.AView;
+import lib.IController;
 
 class AudioChannel extends AView
 {

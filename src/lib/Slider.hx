@@ -1,3 +1,7 @@
+package lib;
+
+import bitmaps.SliderBackBitmap;
+import bitmaps.SliderHandleBitmap;
 import flash.display.Sprite;
 import flash.events.Event;
 import flash.events.MouseEvent;

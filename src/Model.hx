@@ -1,5 +1,6 @@
 import flash.events.EventDispatcher;
 import flash.events.Event;
+import lib.UIEvent;
 
 class Model extends EventDispatcher
 {

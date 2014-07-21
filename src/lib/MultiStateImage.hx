@@ -1,3 +1,5 @@
+package lib;
+
 import flash.display.Sprite;
 import flash.events.Event;
 import flash.display.Shape;
