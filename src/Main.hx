@@ -1,64 +1,31 @@
-package ;
-
 import flash.display.Sprite;
-import flash.events.Event;
 import flash.Lib;
 
-/**
- * ...
- * @author pm
- */
-
-class Main extends Sprite 
+class Main extends Sprite
 {
-	var inited:Bool;
-
-	/* ENTRY POINT */
+	private var audioEngine:AudioEngine;
 	
-	function resize(e) 
-	{
-		if (!inited) init();
-		// else (resize or orientation change)
+	private var model:Model;
+	private var view:AView;
+	private var controller:IController;
+	
+	static function main(){
+		new Main();
 	}
 	
-	function init() 
-	{
-		if (inited) return;
-		inited = true;
-
-		// (your code here)
+	public function new(){
+		super();
+		// models
+		model = new Model();
+		// controllers
+		controller = new AppController(model);
+		// views
+		view = new AppView(model,controller);
+		audioEngine = new AudioEngine( model,controller );
 		
-		// Stage:
-		// stage.stageWidth x stage.stageHeight @ stage.dpiScale
+		Lib.current.addChild(view);
 		
-		// Assets:
-		// nme.Assets.getBitmapData("img/assetname.jpg");
-	}
-
-	/* SETUP */
-
-	public function new() 
-	{
-		super();	
-		addEventListener(Event.ADDED_TO_STAGE, added);
-	}
-
-	function added(e) 
-	{
-		removeEventListener(Event.ADDED_TO_STAGE, added);
-		stage.addEventListener(Event.RESIZE, resize);
-		#if ios
-		haxe.Timer.delay(init, 100); // iOS 6
-		#else
-		init();
-		#end
-	}
-	
-	public static function main() 
-	{
-		// static entry point
-		Lib.current.stage.align = flash.display.StageAlign.TOP_LEFT;
-		Lib.current.stage.scaleMode = flash.display.StageScaleMode.NO_SCALE;
-		Lib.current.addChild(new Main());
+		view.x = 32;
+		view.y = 4;
 	}
 }
