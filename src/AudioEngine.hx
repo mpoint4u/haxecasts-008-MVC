@@ -71,7 +71,7 @@ class AudioEngine extends AView
 	}
 	
 	private function loadAudio():Void{
-		trace('calling loadAudio() in AudioEngine.hx ... ');
+		//trace('calling loadAudio() in AudioEngine.hx ... ');
 
 		#if flash
 		//sound = Assets.getSound ("assets/testsound.wav");

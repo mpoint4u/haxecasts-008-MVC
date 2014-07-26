@@ -49,7 +49,7 @@ class AudioChannel extends AView
 
 	public function load(songURL:String):Void {
 		
-		trace('calling load() in AudioChannel.hx ... ');			
+		//trace('calling load() in AudioChannel.hx ... ');			
 		//sound = new Sound();
 
 		//sound = Assets.getSound ("assets/testsound.wav");
@@ -74,7 +74,7 @@ class AudioChannel extends AView
 		bytes.position = 0;
 		
 		//sound.extract(bytes, bufferSize, soundIndex);
-		sound.loadCompressedDataFromByteArray(bytes, bufferSize);		
+		sound.loadCompressedDataFromByteArray(bytes, bufferSize);
 		
 		
 		var samplesRead:Int = bytes.position >> 2;
