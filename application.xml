@@ -6,9 +6,9 @@
 	<meta title="Episode-008-MVC" package="Episode008MVC" version="1.0.0" company="pm" />
 	
 	<!-- output -->
-	<app main="Main" file="Episode008MVC" path="bin" />
+	<app main="Main" file="Episode008MVC" path="Export" swf-version="11" />
 	
-	<window background="#000000" fps="60" />
+	<window background="#C0C0C0" fps="60" />
 	<window width="800" height="480" unless="mobile" />
 	<window orientation="landscape" vsync="false" antialiasing="0" if="cpp" />
 	
@@ -19,9 +19,9 @@
 	
 	<!-- assets -->
 	<icon path="assets/openfl.svg" />
-	<assets path="assets" exclude="*.svg" />
+	<assets path="assets" exclude="*.svg|*.mp3|*.png" />
 	
-	<assets path="assets/images" include="*" />
+	<assets path="assets/images" include="*.png" />
 	
 	<!-- optimize output
 	<haxeflag name="-dce full" /> -->

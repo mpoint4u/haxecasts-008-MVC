@@ -25,7 +25,8 @@ class Main extends Sprite
 		view = new AppView(model,controller);
 		audioEngine = new AudioEngine( model,controller );
 		
-		Lib.current.addChild(view);
+		//Lib.current.addChild(view);
+		Lib.current.stage.addChild(view);
 		
 		view.x = 32;
 		view.y = 4;

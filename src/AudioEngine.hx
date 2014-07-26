@@ -72,16 +72,22 @@ class AudioEngine extends AView
 	
 	private function loadAudio():Void{
 		trace('calling loadAudio() in AudioEngine.hx ... ');
-//		audioChannels[0].load('audio-files/track-01.mp3');
-//		audioChannels[1].load('audio-files/track-02.mp3');
-//		audioChannels[2].load('audio-files/track-03.mp3');
-//		audioChannels[3].load('audio-files/track-04.mp3');
 
-		audioChannels[0].load('assets/track-01.mp3');
-		audioChannels[1].load('assets/track-02.mp3');
-		audioChannels[2].load('assets/track-03.mp3');
-		audioChannels[3].load('assets/track-04.mp3');
-
+		#if flash
+		//sound = Assets.getSound ("assets/testsound.wav");
+		audioChannels[0].load('assets/track-01.wav');
+		audioChannels[1].load('assets/track-02.wav');
+		audioChannels[2].load('assets/track-03.wav');
+		audioChannels[3].load('assets/track-04.wav');		
+			
+		#else
+		//sound = Assets.getSound ("assets/testsound.ogg");
+		audioChannels[0].load('assets/track-01.ogg');
+		audioChannels[1].load('assets/track-02.ogg');
+		audioChannels[2].load('assets/track-03.ogg');
+		audioChannels[3].load('assets/track-04.ogg');		
+		
+		#end
 	}
 	
 	private function onAudioChannelLoaded(e:UIEvent):Void{	

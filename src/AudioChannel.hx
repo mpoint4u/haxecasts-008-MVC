@@ -53,18 +53,11 @@ class AudioChannel extends AView
 		//sound = new Sound();
 
 		//sound = Assets.getSound ("assets/testsound.wav");
-		sound = Assets.getSound (songURL);		
-		
-		
-		//sound.load(new URLRequest(songURL));
-		
-		
-		
-		
+		sound = Assets.getSound (songURL);				
+		//sound.load(new URLRequest(songURL));	
 		//sound.addEventListener(Event.COMPLETE, onLoaded);
 		
-		controller.update('channel_loaded', id, sound.length * 44.1);		
-		
+		controller.update('channel_loaded', id, sound.length * 44.1);			
 	}
 	
 	
@@ -72,7 +65,8 @@ class AudioChannel extends AView
 		sound.removeEventListener(Event.COMPLETE, onLoaded);
 		//audioEngine.onAudioChannelLoaded(sound.length * 44.1);
 		controller.update('channel_loaded', id, sound.length * 44.1);
-	}*/
+	}
+*/
 	
 	public function setSamples(sndBuf:Vector<Float> , bufferSize:Int):Void
 	{
