@@ -19,6 +19,8 @@
 	
 	<!-- assets -->
 	<icon path="assets/openfl.svg" />
+	<assets path="assets" exclude="*.svg" />
+	
 	<assets path="assets/images" include="*" />
 	
 	<!-- optimize output

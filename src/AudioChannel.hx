@@ -9,6 +9,7 @@ import flash.events.ProgressEvent;
 import flash.Vector;
 import lib.AView;
 import lib.IController;
+import openfl.Assets;
 
 class AudioChannel extends AView
 {
@@ -46,23 +47,42 @@ class AudioChannel extends AView
 		
 	}
 
-	public function load(songURL:String):Void{	
-		sound = new Sound();
-		sound.load(new URLRequest(songURL));
-		sound.addEventListener(Event.COMPLETE, onLoaded);
+	public function load(songURL:String):Void {
+		
+		trace('calling load() in AudioChannel.hx ... ');			
+		//sound = new Sound();
+
+		//sound = Assets.getSound ("assets/testsound.wav");
+		sound = Assets.getSound (songURL);		
+		
+		
+		//sound.load(new URLRequest(songURL));
+		
+		
+		
+		
+		//sound.addEventListener(Event.COMPLETE, onLoaded);
+		
+		controller.update('channel_loaded', id, sound.length * 44.1);		
+		
 	}
 	
-	private function onLoaded(event:Event):Void{
+	
+/*	private function onLoaded(event:Event):Void{
 		sound.removeEventListener(Event.COMPLETE, onLoaded);
 		//audioEngine.onAudioChannelLoaded(sound.length * 44.1);
 		controller.update('channel_loaded', id, sound.length * 44.1);
-	}
+	}*/
 	
 	public function setSamples(sndBuf:Vector<Float> , bufferSize:Int):Void
 	{
 		// get samples
 		bytes.position = 0;
-		sound.extract(bytes, bufferSize, soundIndex);
+		
+		//sound.extract(bytes, bufferSize, soundIndex);
+		sound.loadCompressedDataFromByteArray(bytes, bufferSize);		
+		
+		
 		var samplesRead:Int = bytes.position >> 2;
 		soundIndex += samplesRead >> 1;
 		var i:Int = 0;
@@ -95,7 +115,11 @@ class AudioChannel extends AView
 	public function addSamples(sndBuf:Vector<Float> , bufferSize:Int):Void{
 		// get samples
 		bytes.position = 0;
-		sound.extract(bytes, bufferSize,soundIndex);
+		
+		//sound.extract(bytes, bufferSize,soundIndex);
+		sound.loadCompressedDataFromByteArray(bytes, bufferSize);
+		
+		
 		var samplesRead:Int = bytes.position >> 2;
 		soundIndex += samplesRead >> 1;
 		var i:Int = 0;

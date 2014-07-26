@@ -26,7 +26,7 @@ class AudioEngine extends AView
 	private var bytes:ByteArray;
 	// house keeping
 	private var samplesInSong:Float;
-	private var channelsLoaded:UInt;
+	private var channelsLoaded:Int;
 	
 	private var playing:Bool;
 	private var loaded:Bool;
@@ -71,16 +71,16 @@ class AudioEngine extends AView
 	}
 	
 	private function loadAudio():Void{
-		trace('loading audio');
+		trace('calling loadAudio() in AudioEngine.hx ... ');
 //		audioChannels[0].load('audio-files/track-01.mp3');
 //		audioChannels[1].load('audio-files/track-02.mp3');
 //		audioChannels[2].load('audio-files/track-03.mp3');
 //		audioChannels[3].load('audio-files/track-04.mp3');
 
-		audioChannels[0].load('audio-files/track-01.mp3');
-		audioChannels[1].load('audio-files/track-02.mp3');
-		audioChannels[2].load('audio-files/track-03.mp3');
-		audioChannels[3].load('audio-files/track-04.mp3');
+		audioChannels[0].load('assets/track-01.mp3');
+		audioChannels[1].load('assets/track-02.mp3');
+		audioChannels[2].load('assets/track-03.mp3');
+		audioChannels[3].load('assets/track-04.mp3');
 
 	}
 	
